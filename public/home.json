@@ -1,0 +1,309 @@
+{
+    "code": 1000,
+    "message": null,
+    "data": {
+        "content": [
+            {
+                "id": 47,
+                "createTime": "2019-11-28 16:17",
+                "name": "姜亚萍",
+                "username": "kefu004",
+                "avatar": null,
+                "status": 2,
+                "email": "1539622170@qq.com",
+                "phone": "18669835490",
+                "feedback":"反馈意见反馈意见反馈反馈意见反馈意见反馈反馈意见反馈意见反馈反馈意见反馈意见反馈反馈意见反馈意见反馈",
+                "lastLoginTime": "2020-03-28 09:24",
+                "lastLoginIP": "223.104.190.245",
+                "urlName":"https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
+                "remark": null,
+                "address": null,
+                "roles": [
+                    {
+                        "id": 5,
+                        "createTime": null,
+                        "name": "客服",
+                        "code": "1003",
+                        "description": null,
+                        "type": 2
+                    }
+                ],
+                "merchantInfo": null
+            },
+            {
+                "id": 36,
+                "createTime": "2019-11-06 17:12",
+                "name": "张婵",
+                "username": "kefu001",
+                "avatar": null,
+                "status": 1,
+                "email": "1023035479@qq.com",
+                "phone": "13583298186",
+                "lastLoginTime": "2020-04-15 09:26",
+                "lastLoginIP": "218.201.113.213",
+                "remark": null,
+                "address": null,
+                "roles": [
+                    {
+                        "id": 5,
+                        "createTime": null,
+                        "name": "客服",
+                        "code": "1003",
+                        "description": null,
+                        "type": 2
+                    }
+                ],
+                "merchantInfo": null
+            },
+            {
+                "id": 35,
+                "createTime": "2019-11-06 17:11",
+                "name": "张晓明",
+                "username": "kefu002",
+                "avatar": null,
+                "status": 1,
+                "email": "1023035479@qq.com",
+                "phone": "13583298186",
+                "lastLoginTime": "2020-04-24 08:59",
+                "lastLoginIP": "218.201.113.212",
+                "remark": null,
+                "address": null,
+                "roles": [
+                    {
+                        "id": 5,
+                        "createTime": null,
+                        "name": "客服",
+                        "code": "1003",
+                        "description": null,
+                        "type": 2
+                    }
+                ],
+                "merchantInfo": null
+            },
+            {
+                "id": 34,
+                "createTime": "2019-11-06 14:52",
+                "name": "臧玮",
+                "username": "caiwu",
+                "avatar": null,
+                "status": 1,
+                "email": "1023035479@qq.com",
+                "phone": "13583298186",
+                "lastLoginTime": "2019-11-08 15:36",
+                "lastLoginIP": "218.201.113.213",
+                "remark": null,
+                "address": null,
+                "roles": [
+                    {
+                        "id": 6,
+                        "createTime": null,
+                        "name": "财务",
+                        "code": "1004",
+                        "description": null,
+                        "type": 2
+                    }
+                ],
+                "merchantInfo": null
+            },
+            {
+                "id": 33,
+                "createTime": "2019-11-06 14:51",
+                "name": "焦焰辉",
+                "username": "dc001",
+                "avatar": null,
+                "status": 1,
+                "email": "1023035479@qq.com",
+                "phone": "13583298186",
+                "lastLoginTime": "2019-11-20 09:06",
+                "lastLoginIP": "218.201.113.213",
+                "remark": null,
+                "address": null,
+                "roles": [
+                    {
+                        "id": 7,
+                        "createTime": null,
+                        "name": "导出人员",
+                        "code": "1005",
+                        "description": null,
+                        "type": 2
+                    }
+                ],
+                "merchantInfo": null
+            },
+            {
+                "id": 32,
+                "createTime": "2019-11-06 11:27",
+                "name": "test-cw",
+                "username": "test-cw",
+                "avatar": null,
+                "status": 1,
+                "email": "test-cw",
+                "phone": "test-cw",
+                "lastLoginTime": "2019-12-02 13:34",
+                "lastLoginIP": "218.201.113.213",
+                "remark": null,
+                "address": null,
+                "roles": [
+                    {
+                        "id": 6,
+                        "createTime": null,
+                        "name": "财务",
+                        "code": "1004",
+                        "description": null,
+                        "type": 2
+                    }
+                ],
+                "merchantInfo": null
+            },
+            {
+                "id": 31,
+                "createTime": "2019-11-06 11:24",
+                "name": "test-dc",
+                "username": "test-dc",
+                "avatar": null,
+                "status": 1,
+                "email": "test-dc",
+                "phone": "test-dc",
+                "lastLoginTime": "2020-02-17 19:34",
+                "lastLoginIP": "124.229.120.236",
+                "remark": null,
+                "address": null,
+                "roles": [
+                    {
+                        "id": 7,
+                        "createTime": null,
+                        "name": "导出人员",
+                        "code": "1005",
+                        "description": null,
+                        "type": 2
+                    }
+                ],
+                "merchantInfo": null
+            },
+            {
+                "id": 12,
+                "createTime": "2019-10-23 10:37",
+                "name": "清竹代理",
+                "username": "qingzhudaili",
+                "avatar": null,
+                "status": 1,
+                "email": "1058971@qq.com",
+                "phone": "13583298186",
+                "lastLoginTime": "2020-04-17 15:38",
+                "lastLoginIP": "218.201.113.213",
+                "remark": null,
+                "address": null,
+                "roles": [
+                    {
+                        "id": 3,
+                        "createTime": null,
+                        "name": "清竹数据",
+                        "code": "2002",
+                        "description": null,
+                        "type": 1
+                    }
+                ],
+                "merchantInfo": {
+                    "id": 1,
+                    "createTime": null,
+                    "name": "qingzhudaili",
+                    "companyName": "青岛清竹大数据",
+                    "proxyType": 5,
+                    "province": 22,
+                    "city": 284,
+                    "contact": "青岛",
+                    "phone": "12346",
+                    "email": "13246@123",
+                    "address": "",
+                    "service": 1,
+                    "remarks": null,
+                    "fromDate": "2019-10-18 00:00",
+                    "toDate": "2020-10-18 00:00",
+                    "account": {
+                        "id": 1,
+                        "createTime": "2019-08-19 10:10",
+                        "name": "qingzhudaili",
+                        "cnyAmount": 0.0000,
+                        "vktAmount": 184098.7100,
+                        "cnyFreeze": 0.0000,
+                        "vktFreeze": 0.0000
+                    },
+                    "status": null,
+                    "specialPrice": {
+                        "id": 1,
+                        "dataPrice": 0.1500,
+                        "personaPrice": 6000.0000,
+                        "fixedPrice": 4000.0000
+                    },
+                    "parentId": null,
+                    "isVisitor": 0
+                }
+            },
+            {
+                "id": 10,
+                "createTime": "2019-10-22 13:04",
+                "name": "胡梅",
+                "username": "humei",
+                "avatar": null,
+                "status": 1,
+                "email": "1023035479@qq.com",
+                "phone": "13583298186",
+                "lastLoginTime": "2020-04-14 16:40",
+                "lastLoginIP": "218.201.113.212",
+                "remark": null,
+                "address": null,
+                "roles": [
+                    {
+                        "id": 4,
+                        "createTime": null,
+                        "name": "客服经理",
+                        "code": "1002",
+                        "description": null,
+                        "type": 2
+                    }
+                ],
+                "merchantInfo": null
+            },
+            {
+                "id": 9,
+                "createTime": "2019-10-22 13:01",
+                "name": "姜灵巧",
+                "username": "kefu003",
+                "avatar": null,
+                "status": 1,
+                "email": "1023035479@qq.com",
+                "phone": "13583298186",
+                "lastLoginTime": "2020-04-24 08:52",
+                "lastLoginIP": "218.201.113.213",
+                "remark": null,
+                "address": null,
+                "roles": [
+                    {
+                        "id": 5,
+                        "createTime": null,
+                        "name": "客服",
+                        "code": "1003",
+                        "description": null,
+                        "type": 2
+                    }
+                ],
+                "merchantInfo": null
+            }
+        ],
+        "pageable": {
+            "page": 0,
+            "size": 10,
+            "sort": {
+                "orders": [
+                    {
+                        "direction": "DESC",
+                        "property": "createTime",
+                        "ignoreCase": false,
+                        "nullHandling": "NATIVE"
+                    }
+                ]
+            }
+        },
+        "total": 59
+    }
+}
