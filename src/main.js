@@ -13,6 +13,7 @@ import "@/assets/css/reset.css"
 // 引入echarts
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
+
 axios.defaults.baseURL = "http://localhost:8080"
 Vue.prototype.$http = axios;
 

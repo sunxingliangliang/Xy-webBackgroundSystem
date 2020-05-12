@@ -15,40 +15,61 @@
       </div>
     </el-header>
     <el-container>
-      <el-aside :width="isCollapse ? '64px' : '200px'">
+      <el-aside width="200px">
         <!-- <div class="button_menu" @click="button_menu">折叠</div> -->
         <el-menu
           background-color="#333744"
           text-color="#fff"
           unique-opened
-          :collapse="isCollapse"
           :collapse-transition="false"
           router
           :default-active="activePath"
         >
-          <el-submenu
-            :index="item.id+''"
-            v-for="item in menulist"
-            :key="item.id"
-            v-if="item.children&&list.includes(item.id)"
-          >
-            <template slot="title">
-              <div @click="oneMenu(item.authName)">
-                <i :class="iconObj[item.id]"></i>
-                <span style="color:#fff">{{item.authName}}</span>
-              </div>
-            </template>
-            <el-menu-item-group>
+          <!-- 一级菜单 -->
+          <template v-for="item in menulist">
+            <el-submenu :index="item.id+''" :key="item.id" v-if="list.includes(item.id)">
+              <template slot="title">
+                <div @click="oneMenu(item.authName)">
+                  <i :class="iconObj[item.id]"></i>
+                  <span style="color:#fff">{{item.authName}}</span>
+                </div>
+              </template>
               <!-- 二级菜单 -->
-              <el-menu-item
-                :index="subItem.path"
-                v-for="subItem in item.children"
-                :key="subItem.id"
-                v-if="list.includes(subItem.id)"
-                @click="saveNavState(subItem.path),activeName(subItem.authName)"
-              >{{subItem.authName}}</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
+              <template v-for="itemChild in item.children">
+                <el-submenu
+                  v-if="itemChild.children && itemChild.children.length"
+                  :index="itemChild.path"
+                  :key="itemChild.path"
+                  @click="saveNavState(itemChild.path),activeName(itemChild.authName)"
+                >
+                  <template slot="title">
+                    <i :class="itemChild.icon"></i>
+                    <span>{{itemChild.authName}}</span>
+                  </template>
+                  <!-- 三级菜单 -->
+                  <el-menu-item
+                    v-for="itemChild_Child in itemChild.children"
+                    :index="itemChild_Child.path"
+                    :key="itemChild_Child.path"
+                    @click="saveNavState(itemChild_Child.path),activeName(itemChild_Child.authName)"
+                  >
+                    <i :class="itemChild_Child.icon"></i>
+                    <span slot="title">{{itemChild_Child.authName}}</span>
+                  </el-menu-item>
+                </el-submenu>
+                <!-- 判断是否有二级分页 -->
+                <el-menu-item
+                  v-else-if="list.includes(itemChild.id)"
+                  :index="itemChild.path"
+                  :key="itemChild.path"
+                  @click="saveNavState(itemChild.path),activeName(itemChild.authName)"
+                >
+                  <i :class="itemChild.icon"></i>
+                  <span slot="title">{{itemChild.authName}}</span>
+                </el-menu-item>
+              </template>
+            </el-submenu>
+          </template>
         </el-menu>
       </el-aside>
       <el-main style="width:100%;height:100%">
@@ -62,7 +83,6 @@
 export default {
   data() {
     return {
-      isCollapse: false,
       activePath: "",
       menulist: [
         {
@@ -73,48 +93,63 @@ export default {
               id: "11",
               authName: "控制台",
               path: "/controlPanel"
-            }
+            },
+            {
+              id: "12",
+              authName: "用户信息",
+              path: "/userinfo"
+            },
+            {
+              id: "13",
+              authName: "用户协议",
+              path: "/userAgreement"
+            },
+            {
+              id: "14",
+              authName: "隐私政策",
+              path: "/privacyPolicy"
+            },
           ]
         },
         {
           id: "2",
-          authName: "素材中心",
+          authName: "等级分佣",
           children: [
             {
               id: "21",
-              authName: "素材分类",
-              path: "/material_classification"
+              authName: "代理基础设置",
+              path: "/Agent_Based"
             },
             {
               id: "22",
-              authName: "素材管理",
-              path: "/material_management"
+              authName: "代理等级管理",
+              path: "/Agent_Level"
+            },
+            {
+              id: "23",
+              authName: "运营商基础设置",
+              path: "/Carrier_Base"
+            },
+            {
+              id: "24",
+              authName: "运营商等级管理",
+              path: "/operator_Class"
             }
           ]
         },
         {
           id: "3",
-          authName: "等级分佣",
+          authName: "素材中心",
           children: [
             {
               id: "31",
-              authName: "代理基础设置",
-              path: "/Agent_Based"
+              authName: "素材分类",
+              path: "/material_classification"
             },
             {
               id: "32",
-              authName: "代理等级管理",
-              path: "/Agent_Level"
-            },
-            {
-              id: "33",
-              authName: "运营商基础设置",
-              path: "/Carrier_Base"
-            },
-            {
-              id: "34",
-              authName: "运营商等级管理",
-              path: "/operator_Class"
+              authName: "素材管理",
+              path: "/material_management"
             }
           ]
         },
@@ -141,8 +176,30 @@ export default {
           children: [
             {
               id: "51",
-              authName: "每日任务",
-              path: "/daily_mission"
+              authName: "0元购",
+              path: "/daily_mission",
+              children: [
+                {
+                  id: "511",
+                  authName: "活动管理",
+                  path: "/functionSet"
+                },
+                {
+                  id: "512",
+                  authName: "商品管理",
+                  path: "/commodity"
+                },
+                {
+                  id: "513",
+                  authName: "资格管理",
+                  path: "/qualification"
+                },
+                {
+                  id: "514",
+                  authName: "资格记录",
+                  path: "/Qualification_records"
+                }
+              ]
             }
           ]
         },
@@ -150,11 +207,11 @@ export default {
           id: "6",
           authName: "会员管理",
           children: [
-            {
-              id: "61",
-              authName: "核心设置",
-              path: "/core_set"
-            },
+            // {
+            //   id: "61",
+            //   authName: "核心设置",
+            //   path: "/core_set"
+            // },
             {
               id: "62",
               authName: "会员管理",
@@ -174,7 +231,7 @@ export default {
               id: "65",
               authName: "会员关系树",
               path: "/Membership_tree"
-            },
+            }
           ]
         },
         {
@@ -256,7 +313,7 @@ export default {
               id: "86",
               authName: "全球分红记录",
               path: "/global_dividend"
-            },
+            }
           ]
         },
         {
@@ -268,21 +325,21 @@ export default {
               authName: "短信核心设置",
               path: "/SMS_core"
             },
-            {
-              id: "92",
-              authName: "推送模板管理",
-              path: "/Push_template"
-            },
+            // {
+            //   id: "92",
+            //   authName: "推送模板管理",
+            //   path: "/Push_template"
+            // },
             {
               id: "93",
               authName: "短信推送记录",
               path: "/SMS_push"
-            },
-            {
-              id: "94",
-              authName: "消息推送记录",
-              path: "/notification"
             }
+            // {
+            //   id: "94",
+            //   authName: "消息推送记录",
+            //   path: "/notification"
+            // }
           ]
         },
         {
@@ -305,6 +362,28 @@ export default {
               path: "/Core_data"
             }
           ]
+        },
+        {
+          id: "1101",
+          authName: "广场审核",
+          children: [
+            {
+              id: "1111",
+              authName: "广场瞬间审核",
+              path: "/SquareAudit"
+            }
+          ]
+        },
+        {
+          id: "1201",
+          authName: "举报管理",
+          children: [
+            {
+              id: "1211",
+              authName: "举报管理",
+              path: "/reportManagement"
+            }
+          ]
         }
       ],
       iconObj: {
@@ -317,7 +396,9 @@ export default {
         "7": "el-icon-menu",
         "8": "el-icon-shopping-cart-1",
         "9": "el-icon-thumb",
-        "10": "el-icon-orange"
+        "10": "el-icon-orange",
+        "1101": "el-icon-bell",
+        "1201": "el-icon-unlock"
       },
       list: JSON.parse(window.sessionStorage.getItem("menulist"))
     };
@@ -326,15 +407,11 @@ export default {
     this.activePath = window.sessionStorage.getItem("activePath");
   },
   methods: {
-    // button_menu() {
-    //   this.isCollapse = !this.isCollapse;
-    // },
     saveNavState(activePath) {
       window.sessionStorage.setItem("activePath", activePath);
       this.activePath = activePath;
     },
     oneMenu(authName) {
-      // console.log(authName)
       window.sessionStorage.setItem("authName", authName);
     },
     activeName(activeName) {
@@ -356,6 +433,7 @@ export default {
             message: "退出成功!"
           });
           //确认退出，清除token
+          sessionStorage.removeItem("token");
           sessionStorage.removeItem("activePath");
           //跳转登录页面(编程式导航)
           this.$router.push("/login");

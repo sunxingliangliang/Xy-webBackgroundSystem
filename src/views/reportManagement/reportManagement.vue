@@ -1,24 +1,22 @@
 <template>
-  <div class="CoreData">
+  <div class="userinfo">
     <Crumbs></Crumbs>
-    <div class="date">
-      <el-date-picker
-        v-model="value1"
-        type="daterange"
-        range-separator="至"
-        start-placeholder="开始日期"
-        end-placeholder="结束日期"
-      ></el-date-picker>
+    <div class="search">
+      <el-input v-model="search" placeholder="请输入举报人手机号或被举报人手机号搜索" style="width:20%"></el-input>
       <el-button type="primary" style="margin-left:50px">搜索</el-button>
     </div>
     <el-table :data="tableData" border style="width: 100%">
-      <el-table-column prop="date" label="日期" width="180" align="center"></el-table-column>
-      <el-table-column prop="name" label="付款订单数量" width="180" align="center"></el-table-column>
-      <el-table-column prop="address" label="新增用户数量" align="center"></el-table-column>
-      <el-table-column prop="address" label="运营商新增数量" align="center"></el-table-column>
-      <el-table-column prop="address" label="预估佣金" align="center"></el-table-column>
-      <el-table-column prop="address" label="结算佣金" align="center"></el-table-column>
-      <el-table-column prop="address" label="升级费" align="center"></el-table-column>
+      <el-table-column prop="date" label="举报人手机号" width="180" align="center"></el-table-column>
+      <el-table-column prop="name" label="被举报人手机号" width="180" align="center"></el-table-column>
+      <el-table-column prop="address" label="举报内容" align="center"></el-table-column>
+      <el-table-column prop="address" label="举报图片" align="center"></el-table-column>
+      <el-table-column prop="address" label="举报时间" align="center"></el-table-column>
+      <el-table-column prop="address" label="处理状态" align="center"></el-table-column>
+      <el-table-column prop="address" label="处理完成时间" align="center"></el-table-column>
+      <el-table-column label="处理结果" align="center">
+          <el-button size="small" type="success">已处理</el-button>
+          <el-button size="small" type="danger">未处理</el-button>
+      </el-table-column>
     </el-table>
     <div class="paging">
       <el-pagination
@@ -32,7 +30,7 @@
       ></el-pagination>
     </div>
   </div>
-</template> 
+</template>
 
 <script>
 import Crumbs from "@/components/crumbs";
@@ -42,7 +40,7 @@ export default {
   },
   data() {
     return {
-      value1: "",
+      search: "",
       currentPage: 1,
       tableData: [
         {
@@ -78,12 +76,13 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-.date {
+<style lang="scss" scoped>
+.search {
   margin-bottom: 20px;
 }
+
 .paging {
   margin-top: 20px;
   float: right;
 }
-</style>>
+</style>

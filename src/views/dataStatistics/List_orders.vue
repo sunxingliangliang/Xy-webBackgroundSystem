@@ -12,7 +12,7 @@
           <el-table-column prop="date" label="头像" width="400" align="center"></el-table-column>
           <el-table-column label="会员名称" align="center">
             <template slot-scope="scope">
-              <div @click="MemberName(scope.row)">{{scope.row.address}}</div>
+              <div style="color:#252cdc;cursor: pointer;" @click="MemberName(scope.row)">{{scope.row.address}}</div>
             </template>
           </el-table-column>
           <el-table-column prop="name" label="出单量" width="400" align="center"></el-table-column>
@@ -30,19 +30,123 @@
           ></el-pagination>
         </div>
         <!-- 弹出框 -->
-        <el-button type="text" @click="dialogFormVisible = true">打开嵌套表单的 Dialog</el-button>
-
-        <el-dialog title="收货地址" :visible.sync="dialogFormVisible">
+        <el-dialog title="收货地址" :visible.sync="dialogFormVisible" width="40%">
           <el-form :model="form">
-            <el-form-item label="活动名称" :label-width="formLabelWidth">
-              <el-input v-model="form.name" autocomplete="off"></el-input>
-            </el-form-item>
-            <el-form-item label="活动区域" :label-width="formLabelWidth">
-              <el-select v-model="form.region" placeholder="请选择活动区域">
-                <el-option label="区域一" value="shanghai"></el-option>
-                <el-option label="区域二" value="beijing"></el-option>
-              </el-select>
-            </el-form-item>
+            <el-divider content-position="left" style="margin:16px 0;">基本信息</el-divider>
+            <el-row>
+              <el-col :span="12">
+                <el-form-item label="昵称：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="真实姓名：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="手机号：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="密码：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+            </el-row>
+            <el-divider content-position="left" style="margin:16px 0;">等级</el-divider>
+            <el-row>
+              <el-col :span="12">
+                <el-form-item label="级别：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+            </el-row>
+            <el-divider content-position="left" style="margin:16px 0;">收益</el-divider>
+            <el-row>
+              <el-col :span="12">
+                <el-form-item label="余额：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="累计收益：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="提现中：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="自购订单：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="累计收货：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+            </el-row>
+            <el-divider content-position="left" style="margin:16px 0;">淘宝联盟pid</el-divider>
+            <el-row>
+              <el-col :span="12">
+                <el-form-item label="拼多多pid：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="京东pid：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="考拉pid：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="多麦pid：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="苏宁pid：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+            </el-row>
+            <el-divider content-position="left" style="margin:16px 0;">类型</el-divider>
+            <el-row>
+              <el-col :span="12">
+                <el-form-item label="最后登录IP：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="登录时间：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="注册IP：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="注册时间：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :span="12">
+                <el-form-item label="备案时间：" :label-width="formLabelWidth">
+                  <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+              </el-col>
+            </el-row>
           </el-form>
           <div slot="footer" class="dialog-footer">
             <el-button @click="dialogFormVisible = false">取 消</el-button>
@@ -157,11 +261,11 @@ export default {
       activeName: "today",
       search: "",
       currentPage: 1,
-      form:{
-        name:'',
-        region:''
+      form: {
+        name: "",
+        region: ""
       },
-      formLabelWidth: '120px',
+      formLabelWidth: "100px",
       dialogFormVisible: false,
       tableData: [
         {
@@ -202,6 +306,7 @@ export default {
       console.log(`当前页: ${val}`);
     },
     MemberName(row) {
+      this.dialogFormVisible = true;
       console.log(row);
     }
   }

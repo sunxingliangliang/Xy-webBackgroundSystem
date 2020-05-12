@@ -5,7 +5,7 @@
         <!-- 三个选项卡按钮 -->
         <div class="login_header">
           <span @click="cur=0" :class="{active:cur==0}">账号登录</span>
-          <span @click="cur=1" :class="{active:cur==1}">注册账号</span>
+          <!-- <span @click="cur=1" :class="{active:cur==1}">注册账号</span> -->
         </div>
         <div class="login_content">
           <!-- 在cur==0时此板块显示 其他时候此板块不显示 -->
@@ -59,8 +59,6 @@
           </div>
         </div>
       </div>
-      <!-- 右边蓝色板块 -->
-      <!-- <div class="loginrslider fl"></div> -->
     </div>
   </div>
 </template>
@@ -128,16 +126,31 @@ export default {
       }else{
         this.$refs.formRef.validate(val => {
         if (this.login.username === "sun" && this.login.password === "000000") {
-          let arr = ["1", "2", "3", "11", "21", "31"];
+          let arr = ["1", "2", "3", "11", "21", "31","5","51","511"];
           window.sessionStorage.setItem("menulist", JSON.stringify(arr));
+          window.sessionStorage.setItem("token", 'ab834355-2916-42f9-bf6d-c4fef6fbcc2e');
           this.$router.push("/index");
           this.$message({
             message: "登陆成功",
             type: "success"
           });
         } else if (this.login.username === "admin" && this.login.password === "000") {
-          let arr = ["1","2","3","4","5","6","7","8","9","11","10","21","22","31","32","33","34","41","42","51","52","61","62","63","64","65","71","72","73","74","75","76","77","78","81","81","82","83","84","85",,"86","91","92","93","94","101","102","103"];
+          let arr = [
+            "1", "11","12","13","14",//管理中心
+            "2","21","22","23","24",//等级分佣
+            "3","31","32",//素材中心
+            "4","41","42",//商品管理
+            "5","51","511","512","513","514",//营销功能
+            "6","62","63","64","65",//会员管理
+            "7","71","72","73","74","75","76","77","78",//订单管理
+            "8","81","81","82","83","84","85","86",//财务管理
+            "9","91","93",//消息推送
+            "10","101","102","103",//数据统计
+            "1101","1111",//广场审核
+            "1201","1211",//举报管理
+            ];
           window.sessionStorage.setItem("menulist", JSON.stringify(arr));
+          window.sessionStorage.setItem("token", 'ab834355-2916-42f9-bf6d-c4fef6fbcc2e');
           this.$router.push("/index");
           this.$message({
             message: "登陆成功",
@@ -154,7 +167,6 @@ export default {
     },
     //登录重置
     onSubmit_reset(){
-      console.log(1)
       this.$refs.formRefs.resetFields();
     },
     //注册重置
@@ -166,23 +178,6 @@ export default {
 </script>
  
 <style scoped>
-/* .fl {
-  float: left;
-}
-.fr {
-  float: right;
-}
-.clear {
-  clear: both;
-}
-a {
-  text-decoration: none;
-  color: #333;
-  transition: ease all 0.5s;
-}
-a {
-  color: #1c65ff;
-} */
 .login{
   position: relative;
   height: 100%;

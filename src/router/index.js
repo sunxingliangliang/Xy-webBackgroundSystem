@@ -4,6 +4,12 @@ import Login from "@/views/login/index.vue"
 import Index from "@/views/index.vue"
 //管理中心 =》 控制台
 import ControlPanel from "@/views/controlPanel/controlPanel.vue"
+//管理中心 => 用户信息
+import Userinfo from "@/views/controlPanel/userinfo.vue"
+//管理中心 => 用户协议
+import UserAgreement from "@/views/controlPanel/userAgreement.vue"
+//管理中心 => 隐私政策
+import PrivacyPolicy from "@/views/controlPanel/privacyPolicy.vue"
 
 // 素材中心 =》 素材分类
 import materialClassification from "@/views/MaterialCenter/material_classification.vue"
@@ -11,13 +17,13 @@ import materialClassification from "@/views/MaterialCenter/material_classificati
 import materialManagement  from "@/views/MaterialCenter/material_management .vue"
 
 //等级分佣 =》 代理基础设置
-import AgentBased from "@/views/are_Rated_Workers/Agent_Based.vue"
+import AgentBased from "@/views/AreRatedWorkers/Agent_Based.vue"
 //等级分佣 =》 代理等级设置
-import AgentLevel from "@/views/are_Rated_Workers/Agent_Level.vue"
+import AgentLevel from "@/views/AreRatedWorkers/Agent_Level.vue"
 //等级分佣 =》 运营商基础设置
-import CarrierBase from "@/views/are_Rated_Workers/Carrier_Base.vue"
+import CarrierBase from "@/views/AreRatedWorkers/Carrier_Base.vue"
 //等级分佣 =》 运营商等级管理
-import operatorClass from "@/views/are_Rated_Workers/operator_Class.vue"
+import operatorClass from "@/views/AreRatedWorkers/operator_Class.vue"
 
 //商品管理 =》 爆料商品
 import BrokeGoods from "@/views/commodityManagement/Broke_goods.vue"
@@ -26,6 +32,14 @@ import GoodsSector from "@/views/commodityManagement/Goods_sector.vue"
 
 //营销功能 => 每日任务
 import dailyMission from "@/views/marketingFunction/daily_mission.vue"
+//营销功能 => 0元购 => 活动管理
+import FunctionSet from "@/views/marketingFunction/functionSet.vue"
+//营销功能 => 0元购 => 商品管理
+import Commodity from "@/views/marketingFunction/commodity.vue"
+//营销功能 => 0元购 => 资格管理
+import Qualification from "@/views/marketingFunction/qualification.vue"
+//营销功能 => 0元购 => 资格记录
+import QualificationRecords from "@/views/marketingFunction/Qualification_records.vue"
 
 //会员管理 => 核心设置
 import coreSet from "@/views/memberManagement/core_set.vue"
@@ -84,6 +98,12 @@ import ListOrders from "@/views/dataStatistics/List_orders.vue"
 //数据统计 => 核心数据统计
 import CoreData from "@/views/dataStatistics/Core_data.vue"
 
+//广场审核 => 广场审核
+import SquareAudit from "@/views/SquareAudit/SquareAudit.vue"
+
+//举报管理 => 举报管理
+import ReportManagement from "@/views/reportManagement/reportManagement.vue"
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -108,6 +128,25 @@ const routes = [
         path:"/controlPanel",
         component:ControlPanel
       },
+      //管理中心 => 用户信息
+      {
+        name:"userinfo",
+        path:"/userinfo",
+        component:Userinfo
+      },
+      //管理中心 => 用户协议
+      {
+        name:"userAgreement",
+        path:"/userAgreement",
+        component:UserAgreement
+      },
+      //管理中心 => 隐私政策
+      {
+        name:"privacyPolicy",
+        path:"/privacyPolicy",
+        component:PrivacyPolicy
+      },
+
       // 素材中心 =》 素材分类
       {
         name:"material_classification",
@@ -162,6 +201,31 @@ const routes = [
         path:"/daily_mission",
         component:dailyMission
       },
+      //营销功能 => 0元购 => 活动管理
+      {
+        name:"functionSet",
+        path:"/functionSet",
+        component:FunctionSet
+      },
+      //营销功能 => 0元购 => 商品管理
+      {
+        name:"commodity",
+        path:"/commodity",
+        component:Commodity
+      },
+      //营销功能 => 0元购 => 资格管理
+      {
+        name:"qualification",
+        path:"/qualification",
+        component:Qualification
+      },
+      //营销功能 => 0元购 => 资格记录
+      {
+        name:"Qualification_records",
+        path:"/Qualification_records",
+        component:QualificationRecords
+      },
+
 
       //会员管理 => 核心设置
       {
@@ -286,11 +350,11 @@ const routes = [
         component:SMSCore
       }, 
       //消息推送 => 推送模板管理
-      {
-        name:"Push_template",
-        path:"/Push_template",
-        component:PushTemplate
-      }, 
+      // {
+      //   name:"Push_template",
+      //   path:"/Push_template",
+      //   component:PushTemplate
+      // }, 
       //消息推送 => 短信推送记录
       {
         name:"SMS_push",
@@ -298,11 +362,11 @@ const routes = [
         component:SMSPush
       }, 
       //消息推送 => 消息推送记录
-      {
-        name:"notification",
-        path:"/notification",
-        component:Notification
-      }, 
+      // {
+      //   name:"notification",
+      //   path:"/notification",
+      //   component:Notification
+      // }, 
 
       //数据统计 => 商品成交排行榜
       {
@@ -322,6 +386,19 @@ const routes = [
         path:"/Core_data",
         component:CoreData
       }, 
+      //广场审核 => 广场审核
+      {
+        name:"SquareAudit",
+        path:"/SquareAudit",
+        component:SquareAudit
+      }, 
+
+      //举报管理 => 举报管理
+      {
+        name:"reportManagement",
+        path:"/reportManagement",
+        component:ReportManagement
+      }, 
     ]
   },
 ]
@@ -330,4 +407,11 @@ const router = new VueRouter({
   routes
 })
 
+//路由钩子守卫
+router.beforeEach((to,form,next)=>{
+  if(to.path === '/login') return next()
+  const tokenStr = window.sessionStorage.getItem("token")
+  if(!tokenStr) return next("/login")
+  next()
+})
 export default router

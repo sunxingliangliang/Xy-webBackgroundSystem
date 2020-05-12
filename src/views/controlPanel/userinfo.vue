@@ -1,24 +1,19 @@
 <template>
-  <div class="CoreData">
+  <div class="userinfo">
     <Crumbs></Crumbs>
-    <div class="date">
-      <el-date-picker
-        v-model="value1"
-        type="daterange"
-        range-separator="至"
-        start-placeholder="开始日期"
-        end-placeholder="结束日期"
-      ></el-date-picker>
+    <div class="search">
+      <el-input v-model="search" placeholder="请输入手机号或昵称搜索" style="width:20%"></el-input>
       <el-button type="primary" style="margin-left:50px">搜索</el-button>
     </div>
     <el-table :data="tableData" border style="width: 100%">
-      <el-table-column prop="date" label="日期" width="180" align="center"></el-table-column>
-      <el-table-column prop="name" label="付款订单数量" width="180" align="center"></el-table-column>
-      <el-table-column prop="address" label="新增用户数量" align="center"></el-table-column>
-      <el-table-column prop="address" label="运营商新增数量" align="center"></el-table-column>
-      <el-table-column prop="address" label="预估佣金" align="center"></el-table-column>
-      <el-table-column prop="address" label="结算佣金" align="center"></el-table-column>
-      <el-table-column prop="address" label="升级费" align="center"></el-table-column>
+      <el-table-column prop="date" label="头像" width="180" align="center"></el-table-column>
+      <el-table-column prop="name" label="手机号" width="180" align="center"></el-table-column>
+      <el-table-column prop="address" label="昵称" align="center"></el-table-column>
+      <el-table-column prop="address" label="性别" align="center"></el-table-column>
+      <el-table-column prop="address" label="心情便签" align="center"></el-table-column>
+      <el-table-column prop="address" label="省市" align="center"></el-table-column>
+      <el-table-column prop="address" label="是否vip" align="center"></el-table-column>
+      <el-table-column prop="address" label="是否封号" align="center"></el-table-column>
     </el-table>
     <div class="paging">
       <el-pagination
@@ -32,7 +27,7 @@
       ></el-pagination>
     </div>
   </div>
-</template> 
+</template>
 
 <script>
 import Crumbs from "@/components/crumbs";
@@ -42,7 +37,7 @@ export default {
   },
   data() {
     return {
-      value1: "",
+      search: "",
       currentPage: 1,
       tableData: [
         {
@@ -78,12 +73,13 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-.date {
+<style lang="scss" scoped>
+.search {
   margin-bottom: 20px;
 }
+
 .paging {
   margin-top: 20px;
   float: right;
 }
-</style>>
+</style>
